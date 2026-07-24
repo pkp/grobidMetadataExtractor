@@ -1,10 +1,9 @@
 # grobidMetadataExtractor
-An experimental plugin integrating Grobid for early automated metadata extraction from OJS submission files.
 
-This is a work in progress (!) and should not be used in production.
+A plugin integrating Grobid for early automated metadata extraction from OJS submission files. It is compatible with OJS 3.6.
 
 Known issues:
-- Does not refresh the client-side state after file upload, before the author list is presented.
+- When extracted author metadata does not meet the required minimum data for authors, the submitter is not guided clearly back to the author data for correction on the submission review page.
 
 # Configuration additions
 
