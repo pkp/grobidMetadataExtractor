@@ -219,8 +219,8 @@ class GrobidMetadataExtractorPlugin extends GenericPlugin
             $author->setData('userGroupId', $submitAsUserGroup->id);
 
             $author->setData('email', ''); // This should be removed when author emails are made optional
-            $author->setData('givenName', $xpath->query('tei:persName/tei:forename[@type="first"]', $authorNode)->item(0)->nodeValue, $primaryLocale);
-            $author->setData('familyName', $xpath->query('tei:persName/tei:surname', $authorNode)->item(0)->nodeValue, $primaryLocale);
+            $author->setData('givenName', $xpath->query('tei:persName/tei:forename[@type="first"]', $authorNode)->item(0)?->nodeValue ?? '', $primaryLocale);
+            $author->setData('familyName', $xpath->query('tei:persName/tei:surname', $authorNode)->item(0)?->nodeValue ?? '', $primaryLocale);
             $author->setData('publicationId', $currentPublication->getId());
 
             // We don't yet have a way to direct the submitting author to complete a partial record, so if an author record
