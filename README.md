@@ -1,6 +1,16 @@
 # grobidMetadataExtractor
 
-A plugin integrating Grobid for early automated metadata extraction from OJS submission files. It is compatible with OJS 3.6.
+A plugin integrating [Grobid](https://github.com/grobidOrg/grobid) and optionally [Gotenberg](https://github.com/gotenberg/gotenberg) for early automated metadata extraction from OJS submission files.
+
+It currently supports the following file types:
+
+- DOC/DOCX/ODT: requires Gotenberg server for [converting to PDF](https://monit-grafana.cern.ch/)
+- PDF: [metadata extraction](https://grobid.readthedocs.io/en/latest/Grobid-service/) with Grobid
+
+Compatiblity:
+- PHP 8.2
+- Grobid 0.9
+- Gotenberg 9.x
 
 Known issues:
 - When extracted author metadata does not meet the required minimum data for authors, the submitter is not guided clearly back to the author data for correction on the submission review page.
